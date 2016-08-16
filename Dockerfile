@@ -11,5 +11,5 @@ RUN apt-get update && \
   apt-get purge -y build-essential libncurses5-dev libffi-dev openssl zlib1g-dev && \
   apt-get autoremove -y && \
   apt-get purge -y $(dpkg --get-selections | grep deinstall | awk '{print $1}') && \
-  apt-get clean all
-
+  apt-get clean all && \
+  rm -rf /ruby/
